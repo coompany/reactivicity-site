@@ -179,7 +179,6 @@
 
             $('.workshop-btn').on('click', function(e) {
                 e.preventDefault();
-                console.log($(this));
                 google.maps.event.trigger(maps[0].markers[$(this).attr('data-id')], 'click');
             });
 
