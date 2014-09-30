@@ -5,103 +5,132 @@
 
 			<div id="content" class="row clearfix">
 
-						<div id="main" class="col-md-8 clearfix" role="main">
+						<div id="main" class="col-xs-12 clearfix" role="main">
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                            <?php
+                            query_posts("post_type=post&category_name=news&tag=homepage&posts_per_page=-1");
+							if (have_posts()) : ?>
+                                <div class="row" id="home-tiles">
+                                <?php $i = 0; ?>
+                                <?php while (have_posts()) : the_post(); ?>
+                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-featured' ); ?>
+                                    <div class="col-sm-3 col-xs-4 tile-container">
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
+                                        <article id="post-<?php the_ID(); ?>" class="flip-container <?php echo rand(0,1)==0 ? 'vertical' : null; ?>" ontouchstart="this.classList.toggle('hover');" role="article">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <?php // front content ?>
+                                                    <div class="tile-image" style="background-image: url(http://lorempixel.com/500/500/city/<?php echo $i++; ?><?php //echo $image[0]; ?>)" class="img-responsive"></div>
+                                                </div>
+                                                <div class="back">
+                                                    <?php // back content ?>
+                                                    <header class="article-header">
+                                                        <div class="titlewrap clearfix">
+                                                            <h1 class="post-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                                                            <p class="byline vcard">
+                                                                by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -
+                                                                <time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+                                                                <span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
+                                                            </p>
+                                                        </div>
+                                                    </header> <?php // end article header ?>
+                                                    <footer class="article-footer clearfix">
+                                                        <!--<span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>-->
+                                                        <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span>
+                                                    </footer> <?php // end article footer ?>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                <?php endwhile; ?>
+                                    <?php if (function_exists("emm_paginate")) { ?>
+                                        <?php emm_paginate(); ?>
+                                    <?php } else { ?>
+                                        <nav class="wp-prev-next">
+                                            <ul class="clearfix">
+                                                <li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
+                                                <li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
+                                            </ul>
+                                        </nav>
+                                    <?php } ?>
+                                </div>
+                            <?php else : ?>
 
-								<header class="article-header">
-									<div class="titlewrap clearfix">
-										<h1 class="post-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-										<p class="byline vcard">
-											by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> - 
-											<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
-											<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
-										</p>
-									</div>
-
-								</header> <?php // end article header ?>
-
-								<?php global $brew_options; ?>
-    								<?php if( $brew_options['featured'] == '2' || ( $brew_options['featured'] == '4' && is_single() ) || ( $brew_options['featured'] == '3' && is_home() ) ) { ?>
-										<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-featured' ); ?>
-										<?php if ( $image[1] < '750' && has_post_thumbnail() ) { ?>
-											<section class="featured-content featured-img featured-img-bg" style="background: url('<?php echo $image[0]; ?>')">
-										<?php } // end if 
-										else { ?>
-											<section class="featured-content featured-img">
-												<?php if ( has_post_thumbnail() ) { ?>
-				                                    <a class="featured-img" href="<?php the_permalink(); ?>">
-				                                    	<?php the_post_thumbnail( 'post-featured' ); ?>
-				                                    </a>
-					                            <?php } // end if 
-												else { ?>
-					                            	<hr>
-					                            <?php } //end else?>
-						                <?php } // end else ?>
-									<?php } // end if 
-									else { ?>
-										<section class="featured-content featured-img">
-									<?php } // end else ?>
-
-								</section>
-
-								<section class="entry-content clearfix">
-									<?php the_content('dddd'); ?>
-									<?php wp_link_pages(
-                                		array(
-                                		
-	                                        'before' => '<div class="page-link"><span>' . __( 'Pages:', 'brew' ) . '</span>',
-	                                        'after' => '</div>'
-                                		) 
-                                	); ?>
-								</section> <?php // end article section ?>
-
-								<footer class="article-footer clearfix">
-									<span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>
-              						<span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span>
-            					</footer> <?php // end article footer ?>
-
-								<?php // comments_template(); // uncomment if you want to use them ?>
-
-							</article> <?php // end article ?>
-
-							<?php endwhile; ?>
-
-
-                  <?php if (function_exists("emm_paginate")) { ?>
-                      <?php emm_paginate(); ?>
-									<?php } else { ?>
-											<nav class="wp-prev-next">
-													<ul class="clearfix">
-														<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
-														<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
-													</ul>
-											</nav>
-									<?php } ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry clearfix">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
+                                <article id="post-not-found" class="hentry clearfix">
+                                    <header class="article-header">
+                                        <h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+                                    </header>
+                                    <section class="entry-content">
+                                        <p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+                                    </section>
+                                    <footer class="article-footer">
+                                        <p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
+                                    </footer>
+                                </article>
 
 
-							<?php endif; ?>
+                            <?php endif; ?>
+
+                            <?php wp_reset_query(); ?>
+                            <?php
+                            if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
+                            elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+                            else { $paged = 1; }
+                            $query_args = array(
+                                'post_type' => 'post',
+                                'category_name' => 'news',
+                                'tag__not_in' => array(get_term_by('name', 'homepage', 'post_tag')->term_id),
+                                'posts_per_page' => 2,
+                                'paged' => $paged
+                            );
+                            query_posts($query_args);
+                            if(have_posts()) : ?>
+
+                                <?php while(have_posts()) : the_post(); ?>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 home-news">
+                                            <article id="post-<?php the_ID(); ?>" class="hentry" role="article">
+                                                <header class="article-header">
+                                                    <div class="titlewrap clearfix">
+                                                        <h1 class="post-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                                                        <p class="byline vcard">
+                                                            by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -
+                                                            <time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+                                                            <span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
+                                                        </p>
+                                                    </div>
+                                                </header> <?php // end article header ?>
+                                                <section class="article-content">
+                                                    <?php the_content(); ?>
+                                                </section>
+                                                <footer class="article-footer clearfix">
+                                                    <span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>
+                                                    <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span>
+                                                </footer> <?php // end article footer ?>
+                                            </article>
+                                        </div>
+                                    </div>
+
+                                <?php endwhile; ?>
+
+                                <?php if (function_exists("emm_paginate")) { ?>
+                                    <?php emm_paginate(); ?>
+                                <?php } else { ?>
+                                    <nav class="wp-prev-next">
+                                        <ul class="clearfix">
+                                            <li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
+                                            <li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
+                                        </ul>
+                                    </nav>
+                                <?php } ?>
+
+                            <?php endif; ?>
 
 						</div> <?php // end #main ?>
 
 
-						<?php get_sidebar(); ?>
+						<?php //get_sidebar(); ?>
 
 
 			</div> <?php // end #content ?>

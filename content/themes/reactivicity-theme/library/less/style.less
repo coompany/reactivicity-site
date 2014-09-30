@@ -109,3 +109,111 @@ Want to get fancy for no good reason? Knock yourself out.
 
 }
 
+body {
+  header {
+    nav .navbar {
+      .navbar-header {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  #main {
+
+    #home-tiles {
+      .tile-container {
+        margin-bottom: 16px;
+        text-align: center;
+        .flip-container {
+          margin: 0 auto;
+          .tile-image {
+            .div-image;
+            height: 200px;
+          }
+          .back {
+            background-color: #FF6600;
+          }
+        }
+      }
+    }
+
+    .home-news {
+      margin-top: 60px;
+      article {
+        .article-content {
+          padding: 3px 12px;
+        }
+      }
+    }
+
+  }
+}
+
+.div-image {
+  background-color: transparent;
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+// FLIPPING TILES!
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+  width: 200px;
+  height: 200px;
+  //min-height: 180px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+
+.vertical.flip-container {
+  position: relative;
+}
+
+.vertical .back {
+  transform: rotateX(180deg);
+}
+
+.vertical.flip-container .flipper {
+  transform-origin: 100% 100px; /* half of height */
+}
+
+.vertical.flip-container:hover .flipper {
+  transform: rotateX(-180deg);
+}

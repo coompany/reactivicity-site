@@ -41,30 +41,32 @@
 
 	<body <?php body_class(); ?>>
 
-    <header class="header">
+    <div class="container">
+        <header class="header">
 
-      <nav role="navigation">
-        <div class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container">
-            <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+            <nav role="navigation">
+                <div class="navbar navbar-inverse navbar-default">
+                    <div class="">
+                        <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
 
-              <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+                            <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
 
-            </div>
+                        </div>
 
-            <div class="navbar-collapse collapse navbar-responsive-collapse">
-              <?php bones_main_nav(); ?>
+                        <div class="navbar-collapse collapse navbar-responsive-collapse">
+                            <?php bones_main_nav(); ?>
 
-            </div>
-          </div>
-        </div> 
-        
-      </nav>
+                        </div>
+                    </div>
+                </div>
 
-		</header> <?php // end header ?>
+            </nav>
+
+        </header> <?php // end header ?>
+    </div>
