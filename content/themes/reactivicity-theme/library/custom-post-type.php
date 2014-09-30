@@ -57,4 +57,13 @@ register_post_type( 'workshop', /* (http://codex.wordpress.org/Function_Referenc
     ) /* end of options */
 ); /* end of register post type */
 
+//wp_create_category('News');
+if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
+    require_once (ABSPATH.'/wp-admin/includes/taxonomy.php');
+    if ( ! get_cat_ID( 'News' ) ) {
+        wp_create_category( 'News' );
+    }
+    wp_insert_term('Homepage', 'post_tag');
+}
+
 ?>
