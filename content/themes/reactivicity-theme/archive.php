@@ -4,7 +4,7 @@
 
 			<div id="content" class="clearfix row">
 
-				<div id="main" class="col-md-8 clearfix" role="main">
+				<div id="main" class="col-xs-12 clearfix" role="main">
 					<?php global $brew_options; ?>
 					<?php if ( $brew_options['breadcrumb'] == 0) { ?>
 
@@ -116,7 +116,7 @@
 
 				</div> <?php // end #main ?>
 
-				<?php get_sidebar(); ?>
+				<?php //get_sidebar(); ?>
 
 
 			</div> <?php // end #content ?>

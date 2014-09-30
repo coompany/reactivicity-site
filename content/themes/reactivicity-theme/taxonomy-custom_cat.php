@@ -19,7 +19,7 @@ taxonomy-shoes.php
 
     		<div id="content" class="clearfix row">
 
-					<div id="main" class="col-md-8 clearfix" role="main">
+					<div id="main" class="col-xs-12 clearfix" role="main">
 
 						<h1 class="archive-title h2"><span><?php _e( 'Posts Categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h1>
 
@@ -78,7 +78,7 @@ taxonomy-shoes.php
 
 					</div> <?php // end #main ?>
 
-					<?php get_sidebar(); ?>
+					<?php //get_sidebar(); ?>
 
     		</div> <?php // end #content ?>
 
