@@ -4,7 +4,7 @@
 
 			<div id="content" class="clearfix row">
 
-				<div id="main" class="col-md-8 clearfix" role="main">
+				<div id="main" class="col-xs-12 clearfix" role="main">
 
         		<?php get_template_part( 'breadcrumb' ); ?>
 
@@ -113,7 +113,7 @@
 
 				</div> <?php // end #main ?>
 
-				<?php get_sidebar(); ?>
+				<?php //get_sidebar(); ?>
 
 			</div> <?php // end #content ?>
 
