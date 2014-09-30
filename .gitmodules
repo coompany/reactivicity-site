@@ -4,3 +4,6 @@
 [submodule "content/mu-plugins/acf"]
 	path = content/mu-plugins/acf
 	url = https://github.com/elliotcondon/acf.git
+[submodule "content/mu-plugins/wp-sync-db"]
+	path = content/mu-plugins/wp-sync-db
+	url = https://github.com/wp-sync-db/wp-sync-db.git
