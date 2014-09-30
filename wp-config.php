@@ -19,6 +19,8 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
 define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/reactivicity-site/content' );
 
+define('WP_DEFAULT_THEME', 'reactivicity-theme');
+
 // ================================================
 // You almost certainly do not want to change these
 // ================================================
