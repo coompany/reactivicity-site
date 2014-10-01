@@ -109,11 +109,34 @@ Want to get fancy for no good reason? Knock yourself out.
 
 }
 
+// Gradient colors
+@red-dark: #8e2926;
+@brown: #9e3c21;
+@orange: #e89305;
+@orange-light: #f6a400;
+@lime: #bab537;
+@green: #08b34b;
+@blue-light: #51c0c7;
+
+.reacti-gradient {
+  background-image: -webkit-linear-gradient(@red-dark, @brown, @orange, @orange-light, @lime, @green, @blue-light);
+  background-image: linear-gradient(@red-dark, @brown, @orange, @orange-light, @lime, @green, @blue-light);
+  background-repeat: no-repeat;
+  //filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
+// Font
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400);
+//font-family: 'Open Sans', sans-serif;
+
+
 body {
+  font-family: 'Open Sans', sans-serif;
   header {
     nav .navbar {
       .navbar-header {
         margin-right: 8px;
+        text-transform: uppercase;
       }
     }
   }
@@ -121,17 +144,46 @@ body {
   #main {
 
     #home-tiles {
+      &:first-child {
+        padding-left: 4px;
+      }
       .tile-container {
         margin-bottom: 16px;
         text-align: center;
+        padding: 0px;
         .flip-container {
           margin: 0 auto;
-          .tile-image {
-            .div-image;
-            height: 200px;
+          .reacti-gradient;
+          .front {
+            padding: 8px;
+            .tile-image {
+              .div-image;
+              min-height: 100%;
+            }
           }
           .back {
-            background-color: #FF6600;
+            padding: 8px;
+            .wrapper {
+              background-color: fadeOut(@gray-lighter, 30%);
+             min-height: 100%;
+            }
+            .post-title {
+              font-size: 24px;
+              line-height: 22px;
+              font-weight: 400;
+              a:hover {
+                color: @gray-darker;
+              }
+            }
+            .byline {
+              font-size: 12px;
+              color: @gray;
+            }
+          }
+          footer {
+            position: relative;
+            bottom: 0px;
+            color: @gray;
           }
         }
       }
@@ -147,6 +199,15 @@ body {
     }
 
   }
+
+  #footer {
+    background-color: transparent;
+    #sub-floor {
+      background-color: transparent;
+      color: @gray-dark;
+    }
+  }
+
 }
 
 .div-image {
@@ -168,8 +229,8 @@ body {
 }
 
 .flip-container, .front, .back {
-  width: 200px;
-  height: 200px;
+  width: 260px;
+  height: 260px;
   //min-height: 180px;
 }
 
@@ -211,7 +272,7 @@ body {
 }
 
 .vertical.flip-container .flipper {
-  transform-origin: 100% 100px; /* half of height */
+  transform-origin: 100% 130px; /* half of height */
 }
 
 .vertical.flip-container:hover .flipper {

@@ -24,20 +24,27 @@
                                                 </div>
                                                 <div class="back">
                                                     <?php // back content ?>
-                                                    <header class="article-header">
-                                                        <div class="titlewrap clearfix">
-                                                            <h1 class="post-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-                                                            <p class="byline vcard">
-                                                                by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -
-                                                                <time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
-                                                                <span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
-                                                            </p>
-                                                        </div>
-                                                    </header> <?php // end article header ?>
-                                                    <footer class="article-footer clearfix">
-                                                        <!--<span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>-->
-                                                        <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span>
-                                                    </footer> <?php // end article footer ?>
+                                                    <div class="wrapper">
+                                                        <header class="article-header">
+                                                            <div class="titlewrap clearfix">
+                                                                <h4 class="post-title entry-title">
+                                                                    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+                                                                        <?php the_title(); ?>
+                                                                    </a>
+                                                                </h4>
+                                                                <p class="byline vcard">
+                                                                    <!--by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> - -->
+                                                                    <!--<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>-->
+                                                                    <span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
+                                                                </p>
+                                                            </div>
+                                                        </header> <?php // end article header ?>
+                                                        <footer class="article-footer clearfix">
+                                                            <!--<span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>-->
+                                                            <time class="updated pull-left" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+                                                            <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span>
+                                                        </footer> <?php // end article footer ?>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </article>
@@ -102,7 +109,7 @@
                                                     </div>
                                                 </header> <?php // end article header ?>
                                                 <section class="article-content">
-                                                    <?php the_content(); ?>
+                                                    <?php the_excerpt(); ?>
                                                 </section>
                                                 <footer class="article-footer clearfix">
                                                     <span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>

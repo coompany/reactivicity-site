@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400);
 /******************************************************************
 Site Name: Brew
 Author: Dan Brown
@@ -8215,31 +8216,78 @@ Want to get fancy for no good reason? Knock yourself out.
 @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   
 }
+.reacti-gradient {
+  background-image: -webkit-linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
+  background-image: linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
+  background-repeat: no-repeat;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 body header nav .navbar .navbar-header {
   margin-right: 8px;
+  text-transform: uppercase;
+}
+body #main #home-tiles:first-child {
+  padding-left: 4px;
 }
 body #main #home-tiles .tile-container {
   margin-bottom: 16px;
   text-align: center;
+  padding: 0px;
 }
 body #main #home-tiles .tile-container .flip-container {
   margin: 0 auto;
+  background-image: -webkit-linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
+  background-image: linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
+  background-repeat: no-repeat;
 }
-body #main #home-tiles .tile-container .flip-container .tile-image {
+body #main #home-tiles .tile-container .flip-container .front {
+  padding: 8px;
+}
+body #main #home-tiles .tile-container .flip-container .front .tile-image {
   background-color: transparent;
   background-size: 100%;
   background-position: 50%;
   background-repeat: no-repeat;
-  height: 200px;
+  min-height: 100%;
 }
 body #main #home-tiles .tile-container .flip-container .back {
-  background-color: #FF6600;
+  padding: 8px;
+}
+body #main #home-tiles .tile-container .flip-container .back .wrapper {
+  background-color: rgba(238, 238, 238, 0.7);
+  min-height: 100%;
+}
+body #main #home-tiles .tile-container .flip-container .back .post-title {
+  font-size: 24px;
+  line-height: 22px;
+  font-weight: 400;
+}
+body #main #home-tiles .tile-container .flip-container .back .post-title a:hover {
+  color: #222222;
+}
+body #main #home-tiles .tile-container .flip-container .back .byline {
+  font-size: 12px;
+  color: #555555;
+}
+body #main #home-tiles .tile-container .flip-container footer {
+  position: relative;
+  bottom: 0px;
+  color: #555555;
 }
 body #main .home-news {
   margin-top: 60px;
 }
 body #main .home-news article .article-content {
   padding: 3px 12px;
+}
+body #footer {
+  background-color: transparent;
+}
+body #footer #sub-floor {
+  background-color: transparent;
+  color: #333333;
 }
 .div-image {
   background-color: transparent;
@@ -8259,8 +8307,8 @@ body #main .home-news article .article-content {
 .flip-container,
 .front,
 .back {
-  width: 200px;
-  height: 200px;
+  width: 260px;
+  height: 260px;
 }
 /* flip speed goes here */
 .flipper {
@@ -8294,7 +8342,7 @@ body #main .home-news article .article-content {
   transform: rotateX(180deg);
 }
 .vertical.flip-container .flipper {
-  transform-origin: 100% 100px;
+  transform-origin: 100% 130px;
   /* half of height */
 
 }

@@ -45,7 +45,7 @@
         <header class="header">
 
             <nav role="navigation">
-                <div class="navbar navbar-inverse navbar-default">
+                <div class="navbar navbar-default">
                     <div class="">
                         <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
                         <div class="navbar-header">
