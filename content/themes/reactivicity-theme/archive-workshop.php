@@ -191,118 +191,66 @@
 
   			<div id="content" class="row clearfix">
 
-                <div id="main" class="col-xs-12 clearfix" role="main">
+                <div id="main" class="col-xs-12 clearfix workshops-archive" role="main">
 
             <!-- UNCOMMENT FOR BREADCRUMBS
             <?php if ( function_exists('custom_breadcrumb') ) { custom_breadcrumb(); } ?> -->
 
-					<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
+                    <div class="white-box">
 
-                        <?php
-                        $workshops = array();
-                        query_posts("post_type=workshop&posts_per_page=-1");
-                        if (have_posts()) : while (have_posts()) : the_post();
-                            $excerpt = substr(get_the_excerpt(), 0, 280);
-                            $excerpt_link = explode('<p><a class="excerpt-read-more', $excerpt);
-                            $excerpt = $excerpt_link[0].'...</p>';
-                            $excerpt_link = $excerpt.'<p><a class="btn btn-primary btn-xs" href="'.get_permalink().'">'.__( 'Read More', 'bonestheme' ).'</a></p>';
-                            $workshop = array(
-                                'id' => get_the_ID(),
-                                'title' => get_the_title(),
-                                'content' => apply_filters('the_content', get_the_content()),
-                                'excerpt_link' => $excerpt_link,
-                                'excerpt' => $excerpt,
-                                'image' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'post-featured' ),
-                                'link' => get_permalink(),
-                                'location' => get_field('location')
-                            );
-                        array_push($workshops, $workshop);
-                        endwhile; endif;
-                        ?>
+                        <h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
 
-                        <div class="acf-map">
-                        <?php foreach($workshops as $workshop) { ?>
-                            <div class="marker" data-id="<?php echo $workshop['id']; ?>" data-title="<?php echo $workshop['title']; ?>" data-lat="<?php echo $workshop['location']['lat']; ?>" data-lng="<?php echo $workshop['location']['lng']; ?>">
-                                <h6><?php echo $workshop['title']; ?></h6>
-                                <?php echo $workshop['excerpt_link']; ?>
-                            </div>
-                        <?php } ?>
-                        </div>
+                            <?php
+                            $workshops = array();
+                            query_posts("post_type=workshop&posts_per_page=-1");
+                            if (have_posts()) : while (have_posts()) : the_post();
+                                $excerpt = substr(get_the_excerpt(), 0, 280);
+                                $excerpt_link = explode('<p><a class="excerpt-read-more', $excerpt);
+                                $excerpt = $excerpt_link[0].'...</p>';
+                                $excerpt_link = $excerpt.'<p><a class="btn btn-primary btn-xs" href="'.get_permalink().'">'.__( 'Read More', 'bonestheme' ).'</a></p>';
+                                $workshop = array(
+                                    'id' => get_the_ID(),
+                                    'title' => get_the_title(),
+                                    'content' => apply_filters('the_content', get_the_content()),
+                                    'excerpt_link' => $excerpt_link,
+                                    'excerpt' => $excerpt,
+                                    'image' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'post-featured' ),
+                                    'link' => get_permalink(),
+                                    'location' => get_field('location')
+                                );
+                            array_push($workshops, $workshop);
+                            endwhile; endif;
+                            ?>
 
-                        <div class="row">
-
-                            <div class="col-xs-6 col-sm-4"></div>
-
-                            <div class="col-xs-6 col-sm-8">
-                                <div class="list-group">
-                                    <?php foreach($workshops as $workshop) { ?>
-                                    <a href="#" data-id="<?php echo $workshop['id']; ?>" class="list-group-item workshop-btn">
-                                        <h4 class="list-group-item-heading"><?php echo $workshop['title']; ?></h4>
-                                        <p class="list-group-item-text">
-                                            <?php echo $workshop['excerpt']; ?>
-                                        </p>
-                                    </a>
-                                    <?php } ?>
+                            <div class="acf-map">
+                            <?php foreach($workshops as $workshop) { ?>
+                                <div class="marker" data-id="<?php echo $workshop['id']; ?>" data-title="<?php echo $workshop['title']; ?>" data-lat="<?php echo $workshop['location']['lat']; ?>" data-lng="<?php echo $workshop['location']['lng']; ?>">
+                                    <h6><?php echo $workshop['title']; ?></h6>
+                                    <?php echo $workshop['excerpt_link']; ?>
                                 </div>
+                            <?php } ?>
+                            </div>
+
+                            <div class="row" id="workshops-list">
+
+                                <div class="col-xs-12 col-sm-4"></div>
+
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="list-group">
+                                        <?php foreach($workshops as $workshop) { ?>
+                                        <a href="#" data-id="<?php echo $workshop['id']; ?>" class="list-group-item workshop-btn">
+                                            <h4 class="list-group-item-heading"><?php echo $workshop['title']; ?></h4>
+                                            <p class="list-group-item-text">
+                                                <?php echo $workshop['excerpt']; ?>
+                                            </p>
+                                        </a>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+
                             </div>
 
                         </div>
-
-                        <!--
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-						<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
-
-							<header class="article-header">
-
-								<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-								<p class="byline vcard"><?php
-									printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link());
-								?></p>
-
-							</header> <?php // end article header ?>
-
-							<section class="entry-content clearfix">
-
-								<?php the_excerpt(); ?>
-
-							</section> <?php // end article section ?>
-
-							<footer class="article-footer">
-
-							</footer> <?php // end article footer ?>
-
-						</article> <?php // end article ?>
-
-						<?php endwhile; ?>
-
-								<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
-										<?php bones_page_navi(); ?>
-								<?php } else { ?>
-										<nav class="wp-prev-next">
-												<ul class="clearfix">
-													<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
-													<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
-												</ul>
-										</nav>
-								<?php } ?>
-
-						<?php else : ?>
-
-								<article id="post-not-found" class="hentry clearfix">
-									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-									</header>
-									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the custom posty type archive template.', 'bonestheme' ); ?></p>
-									</footer>
-								</article>
-
-						<?php endif; ?>
-						-->
 
 					</div> <?php // end #main ?>
 

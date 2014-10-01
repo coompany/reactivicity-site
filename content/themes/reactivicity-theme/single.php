@@ -6,7 +6,9 @@
 
 				<div id="main" class="col-xs-12 clearfix" role="main">
 
-        		<?php get_template_part( 'breadcrumb' ); ?>
+                    <div class="white-box">
+
+        		    <?php //get_template_part( 'breadcrumb' ); ?>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -91,6 +93,9 @@
 					  </div><!-- /#single-post-nav -->
 					<?php } ?>
 
+                    </div>
+                    <div class="white-box">
+
           <?php comments_template(); ?>
 
 					<?php endwhile; ?>
@@ -110,6 +115,8 @@
 						</article>
 
 					<?php endif; ?>
+
+                    </div>
 
 				</div> <?php // end #main ?>
 

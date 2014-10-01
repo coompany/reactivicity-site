@@ -38,8 +38,6 @@ Template Name: About Page
             
             </article> <!-- end article -->
 
-            <hr />
-
             <article id="about-logos" class="row hentry">
                 <div class="col-xs-12">
                     <section class="row">

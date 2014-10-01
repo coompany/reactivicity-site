@@ -8260,6 +8260,7 @@ body #content {
 body #main .white-box {
   background-color: white;
   margin-bottom: 20px;
+  padding-bottom: 6px;
 }
 body #main #home-tiles:first-child {
   padding-left: 15px;
@@ -8309,6 +8310,9 @@ body #main .home-news {
 body #main .home-news article .article-content {
   padding: 3px 12px;
 }
+body #main.workshops-archive #workshops-list {
+  padding: 0px 8px;
+}
 body #main #about-logos {
   padding-top: 86px;
 }
@@ -8332,6 +8336,15 @@ body #footer {
 body #footer #sub-floor {
   background-color: transparent;
   color: #333333;
+}
+.pager {
+  margin: 20px 16px;
+}
+.page-title,
+.archive-title {
+  padding-top: 16px;
+  padding-left: 16px;
+  margin-top: 0px;
 }
 .div-image {
   background-color: transparent;
