@@ -8282,6 +8282,19 @@ body #main .home-news {
 body #main .home-news article .article-content {
   padding: 3px 12px;
 }
+body #main #about-logos {
+  padding-top: 86px;
+}
+body #main #about-logos section {
+  margin-bottom: 86px;
+}
+body #main #about-logos section div img {
+  max-height: 120px;
+  margin: 0 auto;
+}
+body #main #about-logos #istituzionali {
+  margin-top: 100px;
+}
 body #footer {
   background-color: transparent;
 }
