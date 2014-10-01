@@ -103,7 +103,7 @@
 					<?php } ?>
 
                     </div>
-                    <div class="white-box">
+                    <div class="white-box comments-box">
 
           <?php comments_template(); ?>
 
