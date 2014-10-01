@@ -753,7 +753,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 990px;
   }
 }
 .container-fluid {
@@ -8223,6 +8223,28 @@ Want to get fancy for no good reason? Knock yourself out.
 }
 body {
   font-family: 'Open Sans', sans-serif;
+  background-image: -webkit-linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
+  background-image: linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body header #brand-header {
+  background-color: white;
+  text-align: center;
+  height: 116px;
+  padding-top: 8px;
+  margin-bottom: 20px;
+}
+body header #brand-header h1 a {
+  background-image: -webkit-linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
+  background-image: linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 50px;
 }
 body header nav.navbar .navbar-header {
   margin-right: 8px;
@@ -8232,22 +8254,25 @@ body header nav.navbar .navbar-form {
   max-width: 300px;
   margin-right: 20px;
 }
+body #content {
+  padding: 0;
+}
+body #main .white-box {
+  background-color: white;
+  margin-bottom: 20px;
+}
 body #main #home-tiles:first-child {
-  padding-left: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 2px;
 }
 body #main #home-tiles .tile-container {
-  margin-bottom: 16px;
   text-align: center;
   padding: 0px;
 }
 body #main #home-tiles .tile-container .flip-container {
   margin: 0 auto;
-  background-image: -webkit-linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
-  background-image: linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
-  background-repeat: no-repeat;
-}
-body #main #home-tiles .tile-container .flip-container .front {
-  padding: 8px;
+  border: 1px solid #eeeeee;
 }
 body #main #home-tiles .tile-container .flip-container .front .tile-image {
   background-color: transparent;
@@ -8256,11 +8281,8 @@ body #main #home-tiles .tile-container .flip-container .front .tile-image {
   background-repeat: no-repeat;
   min-height: 100%;
 }
-body #main #home-tiles .tile-container .flip-container .back {
-  padding: 8px;
-}
 body #main #home-tiles .tile-container .flip-container .back .wrapper {
-  background-color: rgba(238, 238, 238, 0.7);
+  background-color: #eeeeee;
   min-height: 100%;
 }
 body #main #home-tiles .tile-container .flip-container .back .post-title {
@@ -8300,7 +8322,11 @@ body #main #about-logos #istituzionali {
   margin-top: 100px;
 }
 body #footer {
-  background-color: transparent;
+  background-color: #eeeeee;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0 12px;
+  border-top: 0px solid transparent;
 }
 body #footer #sub-floor {
   background-color: transparent;
@@ -8324,8 +8350,8 @@ body #footer #sub-floor {
 .flip-container,
 .front,
 .back {
-  width: 260px;
-  height: 260px;
+  width: 100%;
+  height: 218px;
 }
 /* flip speed goes here */
 .flipper {
@@ -8359,7 +8385,7 @@ body #footer #sub-floor {
   transform: rotateX(180deg);
 }
 .vertical.flip-container .flipper {
-  transform-origin: 100% 130px;
+  transform-origin: 100% 109px;
   /* half of height */
 
 }

@@ -44,6 +44,14 @@
     <div class="container">
         <header class="header">
 
+            <div id="brand-header">
+                <div>
+                    <h1>
+                        <a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+                    </h1>
+                </div>
+            </div>
+
             <nav class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="">
                     <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
@@ -54,7 +62,9 @@
                             <span class="icon-bar"></span>
                         </button>
 
+                        <!--
                         <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+                        -->
 
                     </div>
 

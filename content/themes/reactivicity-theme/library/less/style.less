@@ -129,10 +129,34 @@ Want to get fancy for no good reason? Knock yourself out.
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400);
 //font-family: 'Open Sans', sans-serif;
 
+@container-tablet:             ((720px + @grid-gutter-width));
+@container-sm:                 @container-tablet;
+@container-desktop:            ((940px + @grid-gutter-width));
+@container-md:                 @container-desktop;
+@container-large-desktop:      ((960px + @grid-gutter-width));
+@container-lg:                 @container-large-desktop;
 
 body {
   font-family: 'Open Sans', sans-serif;
+  .reacti-gradient;
+  background-attachment: fixed;
   header {
+    #brand-header {
+      background-color: white;
+      text-align: center;
+      height: 116px;
+      padding-top: 8px;
+      margin-bottom: 20px;
+      h1 a {
+        .reacti-gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 50px;
+      }
+    }
     nav.navbar {
       .navbar-header {
         margin-right: 8px;
@@ -145,31 +169,39 @@ body {
     }
   }
 
+  #content {
+    padding: 0;
+  }
+
   #main {
+
+    .white-box {
+      background-color: white;
+      margin-bottom: 20px;
+    }
 
     #home-tiles {
       &:first-child {
-        padding-left: 4px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 2px;
       }
       .tile-container {
-        margin-bottom: 16px;
         text-align: center;
         padding: 0px;
         .flip-container {
           margin: 0 auto;
-          .reacti-gradient;
+          border: 1px solid @gray-lighter;
           .front {
-            padding: 8px;
             .tile-image {
               .div-image;
               min-height: 100%;
             }
           }
           .back {
-            padding: 8px;
             .wrapper {
-              background-color: fadeOut(@gray-lighter, 30%);
-             min-height: 100%;
+              background-color: @gray-lighter;
+              min-height: 100%;
             }
             .post-title {
               font-size: 24px;
@@ -221,7 +253,11 @@ body {
   }
 
   #footer {
-    background-color: transparent;
+    background-color: @gray-lighter;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0 12px;
+    border-top: 0px solid transparent;
     #sub-floor {
       background-color: transparent;
       color: @gray-dark;
@@ -249,8 +285,8 @@ body {
 }
 
 .flip-container, .front, .back {
-  width: 260px;
-  height: 260px;
+  width: 100%;
+  height: 218px;
   //min-height: 180px;
 }
 
@@ -292,7 +328,7 @@ body {
 }
 
 .vertical.flip-container .flipper {
-  transform-origin: 100% 130px; /* half of height */
+  transform-origin: 100% 109px; /* half of height */
 }
 
 .vertical.flip-container:hover .flipper {

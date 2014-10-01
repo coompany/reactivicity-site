@@ -15,13 +15,14 @@
                             //query_posts("post_type=post&category_name=news&tag=homepage&posts_per_page=-1");
                             $query_tiles = new WP_Query("post_type=post&category_name=news&tag=homepage&posts_per_page=-1");
 							if ($query_tiles->have_posts()) : ?>
+                            <div class="white-box hidden-xs hidden-sm">
                                 <div class="row" id="home-tiles">
                                 <?php $i = 0; ?>
                                 <?php while ($query_tiles->have_posts()) : $query_tiles->the_post(); ?>
                                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-featured' ); ?>
-                                    <div class="col-sm-3 col-xs-4 tile-container">
+                                    <div class="col-xs-3 tile-container">
 
-                                        <article id="post-<?php the_ID(); ?>" class="flip-container <?php echo rand(0,1)==0 ? 'vertical' : null; ?>" ontouchstart="this.classList.toggle('hover');" role="article">
+                                        <article id="post-<?php the_ID(); ?>" class="flip-container" ontouchstart="this.classList.toggle('hover');" role="article">
                                             <div class="flipper">
                                                 <div class="front">
                                                     <?php // front content ?>
@@ -66,6 +67,7 @@
                                         </nav>
                                     <?php } ?>
                                 </div>
+                            </div>
                             <?php else : ?>
 
                                 <article id="post-not-found" class="hentry clearfix">
@@ -97,6 +99,7 @@
                             $query_news = new WP_Query('post_type=post&posts_per_page=15&category_name=news&tag__not_in='.get_term_by('name', 'homepage', 'post_tag')->term_id.'&paged='.$paged);
                             if($query_news->have_posts()) : ?>
 
+                                <div class="white-box">
                                 <?php while($query_news->have_posts()) : $query_news->the_post(); ?>
 
                                     <div class="row">
@@ -135,6 +138,8 @@
                                         </ul>
                                     </nav>
                                 <?php } ?>
+
+                            </div>
 
                             <?php endif; ?>
 
