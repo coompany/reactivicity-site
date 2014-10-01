@@ -140,12 +140,26 @@ body {
   font-family: 'Open Sans', sans-serif;
   .reacti-gradient;
   background-attachment: fixed;
+
+  #shadow {
+    position: absolute;
+    width: 96%;
+    height: 96%;
+    background-color: @navbar-default-bg;
+    z-index: 0;
+    margin-left: 2%;
+    margin-right: auto;
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+
   header {
     #brand-header {
       background-color: @navbar-default-bg;
       text-align: center;
       height: 116px;
       padding-top: 8px;
+      position: relative;
       h1 a {
         .reacti-gradient;
         background-clip: text;
@@ -296,6 +310,7 @@ body {
 
 .pager {
   margin: 20px 16px;
+  padding-bottom: 16px;
 }
 
 .page-title, .archive-title {

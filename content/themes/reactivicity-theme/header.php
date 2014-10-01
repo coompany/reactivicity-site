@@ -41,6 +41,8 @@
 
 	<body <?php body_class(); ?>>
 
+    <div id="shadow"></div>
+
     <div class="container">
         <header class="header">
 

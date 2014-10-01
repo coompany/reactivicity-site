@@ -8228,11 +8228,23 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+body #shadow {
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  background-color: #f8f8f8;
+  z-index: 0;
+  margin-left: 2%;
+  margin-right: auto;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
 body header #brand-header {
   background-color: #f8f8f8;
   text-align: center;
   height: 116px;
   padding-top: 8px;
+  position: relative;
 }
 body header #brand-header h1 a {
   background-image: -webkit-linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
@@ -8352,6 +8364,7 @@ body #footer #sub-floor {
 }
 .pager {
   margin: 20px 16px;
+  padding-bottom: 16px;
 }
 .page-title,
 .archive-title {

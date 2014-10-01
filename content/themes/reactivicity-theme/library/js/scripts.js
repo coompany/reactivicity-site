@@ -67,6 +67,7 @@ jQuery(document).ready(function($) {
     
 	
 	// add all your scripts here
+    $('#shadow').height($(document).innerHeight());
 	
  
 }); /* end of as page load scripts */
