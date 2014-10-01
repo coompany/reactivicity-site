@@ -67,7 +67,12 @@ jQuery(document).ready(function($) {
     
 	
 	// add all your scripts here
-    $('#shadow').height($(document).innerHeight());
+    var setShadowHeight = function() {
+        $('#shadow').height($(document).innerHeight()-50);
+    };
+    setTimeout(setShadowHeight, 1000);
+    setTimeout(setShadowHeight, 3000);
+    setTimeout(setShadowHeight, 6000);
 	
  
 }); /* end of as page load scripts */
