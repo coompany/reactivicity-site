@@ -122,14 +122,22 @@ function custom_breadcrumb() {
     echo '<ol class="breadcrumb">';
     echo '<li><a href="'.get_option('home').'">Home</a></li>';
     if (is_single()) {
-      echo '<li>';
-      the_category(', ');
-      echo '</li>';
-      if (is_single()) {
-        echo '<li>';
-        the_title();
-        echo '</li>';
-      }
+        if(count(get_the_category()) == 0) {
+            echo '<li>';
+            $post_type = get_post_type( get_the_ID() );
+            $obj = get_post_type_object($post_type);
+            echo '<a href="'.get_post_type_archive_link( $post_type ).'">'.$obj->labels->name.'</a>';
+            echo '</li>';
+        } else {
+            echo '<li>';
+            the_category(', ');
+            echo '</li>';
+        }
+        if (is_single()) {
+            echo '<li>';
+            the_title();
+            echo '</li>';
+        }
     } elseif (is_category()) {
       echo '<li>';
       single_cat_title();
