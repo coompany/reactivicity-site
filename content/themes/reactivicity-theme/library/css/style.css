@@ -8298,7 +8298,8 @@ body #main #home-tiles .tile-container .flip-container .back .byline {
   color: #555555;
 }
 body #main #home-tiles .tile-container .flip-container footer {
-  position: relative;
+  position: absolute;
+  width: 100%;
   bottom: 0px;
   color: #555555;
 }
