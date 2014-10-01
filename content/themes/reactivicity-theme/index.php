@@ -8,11 +8,16 @@
 						<div id="main" class="col-xs-12 clearfix" role="main">
 
                             <?php
-                            query_posts("post_type=post&category_name=news&tag=homepage&posts_per_page=-1");
-							if (have_posts()) : ?>
+                            if ( get_query_var('paged') != '' ) { $paged = get_query_var('paged'); }
+                            elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+                            else { $paged = 1; }
+
+                            //query_posts("post_type=post&category_name=news&tag=homepage&posts_per_page=-1");
+                            $query_tiles = new WP_Query("post_type=post&category_name=news&tag=homepage&posts_per_page=-1");
+							if ($query_tiles->have_posts()) : ?>
                                 <div class="row" id="home-tiles">
                                 <?php $i = 0; ?>
-                                <?php while (have_posts()) : the_post(); ?>
+                                <?php while ($query_tiles->have_posts()) : $query_tiles->the_post(); ?>
                                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-featured' ); ?>
                                     <div class="col-sm-3 col-xs-4 tile-container">
 
@@ -78,11 +83,8 @@
 
                             <?php endif; ?>
 
-                            <?php wp_reset_query(); ?>
                             <?php
-                            if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
-                            elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
-                            else { $paged = 1; }
+                            /*
                             $query_args = array(
                                 'post_type' => 'post',
                                 'category_name' => 'news',
@@ -91,9 +93,11 @@
                                 'paged' => $paged
                             );
                             query_posts($query_args);
-                            if(have_posts()) : ?>
+                            */
+                            $query_news = new WP_Query('post_type=post&posts_per_page=15&category_name=news&tag__not_in='.get_term_by('name', 'homepage', 'post_tag')->term_id.'&paged='.$paged);
+                            if($query_news->have_posts()) : ?>
 
-                                <?php while(have_posts()) : the_post(); ?>
+                                <?php while($query_news->have_posts()) : $query_news->the_post(); ?>
 
                                     <div class="row">
                                         <div class="col-xs-12 home-news">
@@ -122,7 +126,7 @@
                                 <?php endwhile; ?>
 
                                 <?php if (function_exists("emm_paginate")) { ?>
-                                    <?php emm_paginate(); ?>
+                                    <?php emm_paginate(null, $query_news); ?>
                                 <?php } else { ?>
                                     <nav class="wp-prev-next">
                                         <ul class="clearfix">

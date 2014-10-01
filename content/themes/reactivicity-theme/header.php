@@ -44,28 +44,35 @@
     <div class="container">
         <header class="header">
 
-            <nav role="navigation">
-                <div class="navbar navbar-default">
-                    <div class="">
-                        <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="">
+                    <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
 
-                            <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+                        <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
 
-                        </div>
+                    </div>
 
-                        <div class="navbar-collapse collapse navbar-responsive-collapse">
-                            <?php bones_main_nav(); ?>
+                    <div class="navbar-collapse collapse navbar-responsive-collapse">
+                        <?php bones_main_nav(); ?>
 
-                        </div>
+                        <form action="<?php echo home_url('/'); ?>" method="get" class="navbar-form pull-right" role="search">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" name="s" id="search" class="form-control" placeholder="Search for something..." value="<?php the_search_query(); ?>">
+                                  <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> <?php _e("Search", "bonestheme"); ?></button>
+                                  </span>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-
             </nav>
 
         </header> <?php // end header ?>

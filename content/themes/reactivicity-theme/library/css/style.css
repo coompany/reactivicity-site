@@ -8224,9 +8224,13 @@ Want to get fancy for no good reason? Knock yourself out.
 body {
   font-family: 'Open Sans', sans-serif;
 }
-body header nav .navbar .navbar-header {
+body header nav.navbar .navbar-header {
   margin-right: 8px;
   text-transform: uppercase;
+}
+body header nav.navbar .navbar-form {
+  max-width: 300px;
+  margin-right: 20px;
 }
 body #main #home-tiles:first-child {
   padding-left: 4px;

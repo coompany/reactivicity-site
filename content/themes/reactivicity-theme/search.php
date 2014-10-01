@@ -5,7 +5,7 @@
 
       <div id="content" class="row clearfix">
 
-            <div id="main" class="col-md-8 clearfix" role="main">
+            <div id="main" class="col-xs-12 clearfix" role="main">
 
               <h1 class="page-title"><span><?php _e("Search Results for","bonestheme"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1>
 
@@ -73,7 +73,7 @@
             </div> <?php // end #main ?>
 
 
-            <?php get_sidebar(); ?>
+            <?php //get_sidebar(); ?>
 
 
       </div> <?php // end #content ?>

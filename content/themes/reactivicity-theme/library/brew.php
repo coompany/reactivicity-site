@@ -20,7 +20,7 @@ add_filter( 'the_content_more_link', 'my_more_link', 10, 2 );
 // Bootstrap Style Pagination
 // http://www.ericmmartin.com/pagination-function-for-wordpress/
 
-function emm_paginate($args = null) {
+function emm_paginate($args = null, $query = null) {
     $defaults = array(
         'page' => null, 'pages' => null, 
         'range' => 3, 'gap' => 3, 'anchor' => 1,
@@ -33,13 +33,16 @@ function emm_paginate($args = null) {
     extract($r, EXTR_SKIP);
 
     if (!$page && !$pages) {
-        global $wp_query;
+        if($query == null) {
+            global $wp_query;
+            $query = $wp_query;
+        }
 
-        $page = get_query_var('paged');
+        $page = $query->query_vars['paged'];
         $page = !empty($page) ? intval($page) : 1;
 
-        $posts_per_page = intval(get_query_var('posts_per_page'));
-        $pages = intval(ceil($wp_query->found_posts / $posts_per_page));
+        $posts_per_page = intval($query->query_vars['posts_per_page']);
+        $pages = intval(ceil($query->found_posts / $posts_per_page));
     }
     
     $output = "";
