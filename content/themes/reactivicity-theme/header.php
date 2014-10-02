@@ -73,6 +73,7 @@
                     <div class="navbar-collapse collapse navbar-responsive-collapse">
                         <?php bones_main_nav(); ?>
 
+                        <!--
                         <form action="<?php echo home_url('/'); ?>" method="get" class="navbar-form pull-right" role="search">
                             <div class="form-group">
                                 <div class="input-group">
@@ -83,6 +84,7 @@
                                 </div>
                             </div>
                         </form>
+                        -->
                     </div>
                 </div>
             </nav>

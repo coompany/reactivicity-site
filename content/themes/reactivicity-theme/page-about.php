@@ -80,7 +80,7 @@ Template Name: About Page
                         </div>
                         <div class="col-xs-3">
                             <a href="#" target="_blank">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/hd-logo.png" alt="HeriCool DigiTools" />
+                                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/hd_logo.jpg" alt="HeriCool DigiTools" />
                             </a>
                         </div>
 

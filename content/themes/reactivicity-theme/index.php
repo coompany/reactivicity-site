@@ -44,7 +44,12 @@
                                                         <footer class="article-footer clearfix">
                                                             <!--<span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>-->
                                                             <time class="updated pull-left" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
-                                                            <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span>
+                                                            <span class="commentnum pull-right">
+                                                                <a href="<?php comments_link(); ?>">
+                                                                    <?php //echo get_comments_number_text( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?>
+                                                                    <i class="fa fa-comment"></i> <?php echo get_comments_number(get_the_ID()); ?>
+                                                                </a>
+                                                            </span>
                                                         </footer> <?php // end article footer ?>
                                                     </div>
                                                 </div>
@@ -62,6 +67,11 @@
                                             </ul>
                                         </nav>
                                     <?php } ?>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12" id="search-container">
+                                        <?php echo get_template_part('searchform'); ?>
+                                    </div>
                                 </div>
                             </div>
                             <?php else : ?>
@@ -97,7 +107,8 @@
                             );
                             query_posts($query_args);
                             */
-                            $wp_query = new WP_Query('post_type=post&posts_per_page=2&category_name=news&tag__not_in='.get_term_by('name', 'homepage', 'post_tag')->term_id.'&paged='.$paged);
+                            //$wp_query = new WP_Query('post_type=post&posts_per_page=2&category_name=news&tag__not_in='.get_term_by('name', 'homepage', 'post_tag')->term_id.'&paged='.$paged);
+                            $wp_query = new WP_Query('post_type=post&posts_per_page=5&category_name=news&paged='.$paged);
                             if($wp_query->have_posts()) : ?>
 
                                 <div class="white-box">
@@ -121,7 +132,12 @@
                                                 </section>
                                                 <footer class="article-footer clearfix">
                                                     <span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>
-                                                    <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span>
+                                                    <span class="commentnum pull-right">
+                                                        <a href="<?php comments_link(); ?>">
+                                                            <?php //echo get_comments_number_text( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?>
+                                                            <i class="fa fa-comment"></i> <?php echo get_comments_number(get_the_ID()); ?>
+                                                        </a>
+                                                    </span>
                                                 </footer> <?php // end article footer ?>
                                             </article>
                                         </div>
@@ -130,7 +146,7 @@
                                 <?php endwhile; ?>
 
                                 <?php if (function_exists("emm_paginate")) { ?>
-                                    <?php emm_paginate(null, $query_news); ?>
+                                    <?php emm_paginate(); ?>
                                 <?php } else { ?>
                                     <nav class="wp-prev-next">
                                         <ul class="clearfix">

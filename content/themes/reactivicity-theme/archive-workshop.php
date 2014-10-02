@@ -49,9 +49,7 @@
 
                             <div class="row" id="workshops-list">
 
-                                <div class="col-xs-12 col-sm-4"></div>
-
-                                <div class="col-xs-12 col-sm-8">
+                                <div class="col-xs-12">
                                     <div class="list-group">
                                         <?php foreach($workshops as $workshop) { ?>
                                         <a href="#" data-id="<?php echo $workshop['id']; ?>" class="list-group-item workshop-btn">

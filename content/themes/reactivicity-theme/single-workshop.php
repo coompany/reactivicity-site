@@ -14,7 +14,7 @@
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-							<header class="article-header">
+							<header class="article-header sr-only">
 								<div class="titlewrap clearfix">
 									<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									<p class="byline vcard">
