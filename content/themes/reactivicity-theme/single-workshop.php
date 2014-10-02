@@ -65,7 +65,13 @@
                                         <i class="fa fa-map-marker"></i>&nbsp;&nbsp;<?php echo $location['address']; ?>
                                     </a>
                                 </h6>
-								<?php the_content(); ?>
+
+                                <?php the_content(); ?>
+
+                                <div class="eventbrite-container">
+                                    <?php echo get_field('eventbrite'); ?>
+                                </div>
+
 								<?php wp_link_pages(
                                 	array(
 
