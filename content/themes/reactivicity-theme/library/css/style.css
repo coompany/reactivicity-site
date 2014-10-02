@@ -8365,6 +8365,18 @@ body #main.single-workshop .map-container {
 body #main.single-workshop .map-container .acf-map {
   height: 240px;
 }
+body #main.single-workshop .docenti-container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+body #main.single-workshop .docenti-container .media-object {
+  max-width: 20%;
+  min-width: 100px;
+}
+body #main.single-workshop .docenti-container .media-body,
+body #main.single-workshop .docenti-container p {
+  font-size: 12px;
+}
 body #main #about-logos {
   padding-top: 86px;
 }

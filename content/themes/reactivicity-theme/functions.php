@@ -298,3 +298,12 @@ function wpclean_metabox_menu_posttype_archive() {
 
     endif;
 }
+
+
+
+// Pretty debug
+function delog($what) {
+    echo '<pre>';
+    print_r($what);
+    echo '</pre>';
+}

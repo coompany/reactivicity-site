@@ -68,6 +68,24 @@
 
                                 <?php the_content(); ?>
 
+                                <div class="docenti-container">
+                                    <ul class="media-list">
+                                <?php
+                                $docenti = get_field('docenti');
+                                foreach($docenti as $docente) {
+                                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $docente->ID ), 'post-featured' );
+                                    ?>
+                                        <li class="media">
+                                            <img class="media-object pull-left" src="<?php echo $image[0]; ?>" alt="<?php echo $docente->post_title; ?>">
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><?php echo $docente->post_title; ?></h4>
+                                                <p><?php echo apply_filters('the_content', $docente->post_content); ?></p>
+                                            </div>
+                                        </li>
+                                <?php } ?>
+                                    </ul>
+                                </div>
+
                                 <div class="eventbrite-container">
                                     <?php echo get_field('eventbrite'); ?>
                                 </div>
