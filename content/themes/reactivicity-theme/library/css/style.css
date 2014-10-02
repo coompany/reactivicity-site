@@ -8241,10 +8241,10 @@ body #shadow {
 }
 body header #brand-header {
   background-color: white;
-  text-align: center;
   height: 116px;
   padding-top: 8px;
   position: relative;
+  margin-bottom: 60px;
 }
 body header #brand-header h1 a {
   background-image: -webkit-linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
@@ -8256,6 +8256,10 @@ body header #brand-header h1 a {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 50px;
+}
+body header #brand-header img {
+  max-height: 50px;
+  max-width: 40%;
 }
 body header nav.navbar .navbar-header {
   margin-right: 8px;
@@ -8299,6 +8303,9 @@ body #main #home-tiles .tile-container {
 body #main #home-tiles .tile-container .flip-container {
   margin: 0 auto;
   border: 1px solid #eeeeee;
+}
+body #main #home-tiles .tile-container .flip-container .front {
+  background-color: #eeeeee;
 }
 body #main #home-tiles .tile-container .flip-container .front .tile-image {
   background-color: transparent;
@@ -8440,6 +8447,12 @@ h6 a {
   z-index: 9;
 }
 @media (max-width: 767px) {
+  body header #brand-header {
+    margin-bottom: 10px;
+  }
+  body header #brand-header img {
+    margin-left: 22px;
+  }
   body header nav.navbar ul {
     display: inline;
   }

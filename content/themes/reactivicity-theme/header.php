@@ -49,7 +49,17 @@
             <div id="brand-header">
                 <div>
                     <h1>
-                        <a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+                        <a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage" class="sr-only"><?php bloginfo('name'); ?></a>
+                        <?php
+                        $post = $wp_query->post;
+                        if(is_page() && get_page_by_title('Contatti')->ID == $post->ID) {
+                            echo '<img src="'.get_template_directory_uri().'/library/images/Contatti.png" />';
+                        } else if((is_archive() || is_single()) && $post->post_type == 'workshop') {
+                            echo '<img src="'.get_template_directory_uri().'/library/images/Laboratori.png" />';
+                        } else {
+                            echo '<img src="'.get_template_directory_uri().'/library/images/Reactivicity.png" />';
+                        }
+                        ?>
                     </h1>
                 </div>
             </div>

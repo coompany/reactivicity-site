@@ -158,10 +158,10 @@ body {
   header {
     #brand-header {
       background-color: white;
-      text-align: center;
       height: 116px;
       padding-top: 8px;
       position: relative;
+      margin-bottom: 60px;
       h1 a {
         .reacti-gradient;
         background-clip: text;
@@ -170,6 +170,12 @@ body {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 50px;
+      }
+      img {
+        //max-width: 420px;
+        //width: 40%;
+        max-height: 50px;
+        max-width: 40%;
       }
     }
     nav.navbar {
@@ -225,6 +231,7 @@ body {
           margin: 0 auto;
           border: 1px solid @gray-lighter;
           .front {
+            background-color: @gray-lighter;
             .tile-image {
               .div-image;
               min-height: 100%;
@@ -400,6 +407,12 @@ h1, h2, h3, h4, h5, h6 {
 @media(max-width: @grid-float-breakpoint-max) {
   body {
     header {
+      #brand-header {
+        margin-bottom: 10px;
+        img {
+          margin-left: 22px;
+        }
+      }
       nav.navbar {
         ul {
           display: inline;
