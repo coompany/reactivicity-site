@@ -8403,6 +8403,14 @@ body #footer #sub-floor {
   background-position: 50%;
   background-repeat: no-repeat;
 }
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #777777;
+}
 .tile-container .flip-container .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;

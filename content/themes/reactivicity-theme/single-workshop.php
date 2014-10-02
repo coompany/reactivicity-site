@@ -60,6 +60,11 @@
                             </section>
 
 							<section class="entry-content single-content clearfix" itemprop="articleBody">
+                                <h6>
+                                    <a target="_blank" href=" http://maps.google.com/maps?q=<?php echo $location['lat'].','.$location['lng']; ?>">
+                                        <i class="fa fa-map-marker"></i>&nbsp;&nbsp;<?php echo $location['address']; ?>
+                                    </a>
+                                </h6>
 								<?php the_content(); ?>
 								<?php wp_link_pages(
                                 	array(

@@ -54,6 +54,7 @@
                                         <?php foreach($workshops as $workshop) { ?>
                                         <a href="#" data-id="<?php echo $workshop['id']; ?>" class="list-group-item workshop-btn">
                                             <h4 class="list-group-item-heading"><?php echo $workshop['title']; ?></h4>
+                                            <h6><i class="fa fa-map-marker"></i>&nbsp;&nbsp;<?php echo $workshop['location']['address']; ?></h6>
                                             <p class="list-group-item-text">
                                                 <?php echo $workshop['excerpt']; ?>
                                             </p>
