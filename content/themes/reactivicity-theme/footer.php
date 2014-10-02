@@ -33,9 +33,6 @@
                 <div class="col-md-4 copyright">
                     &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
                 </div>
-                <div class="col-md-4 col-md-offset-4 attribution">
-                    <a href="http://www.danvswild.com/brew" target="_blank">Here goes</a> the <a target="_blank" href="http://www.danvswild.com">credits</a>
-                </div>
             </div>
 
         </footer> <!-- end footer -->

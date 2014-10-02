@@ -286,6 +286,22 @@ body {
       margin-top: 20px;
     }
 
+    #social-container {
+      margin-top: 60px;
+      & > div {
+        width: 100% / 3 - 1%;
+        float: left;
+        //padding-right: 8px;
+        text-align: center;
+        &[id*="twitter-"] {
+          //height: 300px;
+        }
+      }
+      &:last-child {
+       // padding-right: 0px;
+      }
+    }
+
     .home-news {
       margin-top: 20px;
       article {
@@ -348,7 +364,7 @@ body {
   #footer {
     background-color: @gray-lighter;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: 0 12px;
     border-top: 0px solid transparent;
     #sub-floor {
@@ -463,7 +479,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {}
+@media (max-width: @screen-sm-max) {
+  body {
+    #main {
+      #social-container {
+        & > div {
+          float: none;
+          width: 100%;
+          &#twitter-hash-container {
+            width: 100% !important;
+            & > iframe {
+              width: 100% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
@@ -472,6 +505,13 @@ h1, h2, h3, h4, h5, h6 {
       .flip-container {
         &, .front, .back {
           height: 188px;
+        }
+      }
+    }
+    #main {
+      #social-container {
+        & > div iframe {
+          width: 230px !important;
         }
       }
     }

@@ -8356,6 +8356,14 @@ body #main #home-tiles .tile-container .flip-container footer {
 body #main #search-container {
   margin-top: 20px;
 }
+body #main #social-container {
+  margin-top: 60px;
+}
+body #main #social-container > div {
+  width: 32.333333333333336%;
+  float: left;
+  text-align: center;
+}
 body #main .home-news {
   margin-top: 20px;
 }
@@ -8405,7 +8413,7 @@ body #main #about-logos #istituzionali {
 body #footer {
   background-color: #eeeeee;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding: 0 12px;
   border-top: 0px solid transparent;
 }
@@ -8497,8 +8505,17 @@ h6 a {
   }
 }
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px) {
-  
+@media (max-width: 991px) {
+  body #main #social-container > div {
+    float: none;
+    width: 100%;
+  }
+  body #main #social-container > div#twitter-hash-container {
+    width: 100% !important;
+  }
+  body #main #social-container > div#twitter-hash-container > iframe {
+    width: 100% !important;
+  }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -8506,6 +8523,9 @@ h6 a {
   body .tile-container .flip-container .front,
   body .tile-container .flip-container .back {
     height: 188px;
+  }
+  body #main #social-container > div iframe {
+    width: 230px !important;
   }
 }
 /* Large devices (large desktops, 1200px and up) */

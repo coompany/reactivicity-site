@@ -73,6 +73,21 @@
                                         <?php get_template_part('searchform'); ?>
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12" id="social-container">
+                                        <div id="facebook-container" class="hidden-xs hidden-sm">
+                                            <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Freactivicity.ldb&amp;width&amp;height=300&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=false&amp;appId=" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:395px;" allowTransparency="true"></iframe>
+                                        </div>
+                                        <div id="twitter-hash-container">
+                                            <a class="twitter-timeline" href="https://twitter.com/hashtag/reactivicity" data-widget-id="517792268829220864">#reactivicity Tweet</a>
+                                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                        </div>
+                                        <div id="twitter-container" class="hidden-xs hidden-sm">
+                                            <a class="twitter-timeline" href="https://twitter.com/reactivicity" data-widget-id="517793115747254273">Tweets di @reactivicity</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <?php else : ?>
 
