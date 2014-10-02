@@ -41,6 +41,7 @@
 
 	<body <?php body_class(); ?>>
 
+    <img id="bg-gradient" src="<?php echo get_template_directory_uri(); ?>/library/images/bg_1px.jpg">
     <div id="shadow"></div>
 
     <div class="container">

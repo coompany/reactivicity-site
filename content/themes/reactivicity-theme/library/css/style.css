@@ -8223,10 +8223,22 @@ Want to get fancy for no good reason? Knock yourself out.
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background-image: -webkit-linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
-  background-image: linear-gradient(#8e2926, #9e3c21, #e89305, #f6a400, #bab537, #08b34b, #51c0c7);
-  background-repeat: no-repeat;
+  /*
+  background-image: url(../images/bg_1px.jpg);
+  background-repeat: repeat-x;
+  background-size: 100% 100%;
+  //background-size: contain;
   background-attachment: fixed;
+  background-position: center;
+  */
+
+}
+body #bg-gradient {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
 }
 body #shadow {
   position: absolute;
@@ -8472,10 +8484,12 @@ h6 a {
     padding-right: 22px;
     max-width: 100%;
   }
-  body header nav.navbar ul {
+  body header nav.navbar ul.navbar-nav {
     display: inline;
+    width: 100%;
   }
-  body header nav.navbar ul li {
+  body header nav.navbar ul.navbar-nav li {
+    min-width: 300px;
     width: 100%;
   }
   body #main #search-container {

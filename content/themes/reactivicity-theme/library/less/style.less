@@ -140,8 +140,22 @@ Want to get fancy for no good reason? Knock yourself out.
 
 body {
   font-family: 'Open Sans', sans-serif;
-  .reacti-gradient;
+  //.reacti-gradient;
+  /*
+  background-image: url(../images/bg_1px.jpg);
+  background-repeat: repeat-x;
+  background-size: 100% 100%;
+  //background-size: contain;
   background-attachment: fixed;
+  background-position: center;
+  */
+  #bg-gradient {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+  }
 
   #shadow {
     position: absolute;
@@ -189,7 +203,7 @@ body {
       ul.navbar-nav {
         width: 100%;
         li {
-          width: 100%/3%;
+          width: 100%/3;
           a {
             text-align: center;
             text-transform: uppercase;
@@ -430,9 +444,11 @@ h1, h2, h3, h4, h5, h6 {
         }
       }
       nav.navbar {
-        ul {
+        ul.navbar-nav {
           display: inline;
+          width: 100%;
           li {
+            min-width: 300px;
             width: 100%;
           }
         }
