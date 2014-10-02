@@ -393,3 +393,26 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+
+
+// Media Queries
+
+@media(max-width: @grid-float-breakpoint-max) {
+  body {
+    header {
+      nav.navbar {
+        ul {
+          display: inline;
+          li {
+            width: 100%;
+          }
+        }
+      }
+    }
+    #main {
+      #search-container {
+        padding: 0px 38px;
+      }
+    }
+  }
+}

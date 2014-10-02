@@ -11,8 +11,8 @@
                             //query_posts("post_type=post&category_name=news&tag=homepage&posts_per_page=-1");
                             $wp_query = new WP_Query("post_type=post&category_name=news&tag=homepage&posts_per_page=-1");
 							if ($wp_query->have_posts()) : ?>
-                            <div class="white-box hidden-xs hidden-sm">
-                                <div class="row" id="home-tiles">
+                            <div class="white-box">
+                                <div class="row hidden-xs hidden-sm" id="home-tiles">
                                 <?php $i = 0; ?>
                                 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
                                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-featured' ); ?>
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12" id="search-container">
-                                        <?php echo get_template_part('searchform'); ?>
+                                        <?php get_template_part('searchform'); ?>
                                     </div>
                                 </div>
                             </div>

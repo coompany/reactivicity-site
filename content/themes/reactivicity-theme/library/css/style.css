@@ -8439,3 +8439,14 @@ h6 a {
 .tile-container .flip-container .back {
   z-index: 9;
 }
+@media (max-width: 767px) {
+  body header nav.navbar ul {
+    display: inline;
+  }
+  body header nav.navbar ul li {
+    width: 100%;
+  }
+  body #main #search-container {
+    padding: 0px 38px;
+  }
+}
