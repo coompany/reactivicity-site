@@ -19,13 +19,13 @@ Template Name: About Page
             
             <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
               
-              <header class="page-head article-header">
+              <header class="page-head article-header sr-only">
                 
                 <div class=""><h1 class="page-title entry-title" itemprop="headline"><?php the_title(); ?></h1></div>
               
               </header> <!-- end article header -->
             
-              <section class="page-content entry-content clearfix" itemprop="articleBody">
+              <section class="page-content entry-content clearfix" itemprop="articleBody" style="padding-top: 40px">
                 <?php the_content(); ?>
             
               </section> <!-- end article section -->

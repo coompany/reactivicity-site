@@ -14,7 +14,7 @@
 
                     <div class="white-box">
 
-                        <h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
+                        <h1 class="archive-title h2 sr-only"><?php post_type_archive_title(); ?></h1>
 
                             <?php
                             $workshops = array();

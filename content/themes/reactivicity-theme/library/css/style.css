@@ -743,12 +743,12 @@ pre code {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 630px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 790px;
   }
 }
 @media (min-width: 1200px) {
@@ -8244,6 +8244,7 @@ body header #brand-header {
   height: 116px;
   padding-top: 8px;
   position: relative;
+  margin-top: 60px;
   margin-bottom: 60px;
 }
 body header #brand-header h1 a {
@@ -8258,8 +8259,8 @@ body header #brand-header h1 a {
   font-size: 50px;
 }
 body header #brand-header img {
-  max-height: 50px;
-  max-width: 40%;
+  max-height: 60px;
+  max-width: 60%;
 }
 body header nav.navbar .navbar-header {
   margin-right: 8px;
@@ -8269,17 +8270,21 @@ body header nav.navbar .navbar-form {
   max-width: 300px;
   margin-right: 20px;
 }
-body header nav.navbar ul {
+body header nav.navbar ul.navbar-nav {
   width: 100%;
 }
-body header nav.navbar ul li {
+body header nav.navbar ul.navbar-nav li {
   width: 33.333333333333336%;
 }
-body header nav.navbar ul li a {
+body header nav.navbar ul.navbar-nav li a {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
+  color: #8e2926;
+}
+body header nav.navbar ul.navbar-nav li.active a {
+  color: #8e2926;
 }
 body #content {
   padding: 0;
@@ -8340,7 +8345,7 @@ body #main #search-container {
   margin-top: 20px;
 }
 body #main .home-news {
-  margin-top: 60px;
+  margin-top: 20px;
 }
 body #main .home-news article .article-content {
   padding: 3px 12px;
@@ -8451,7 +8456,9 @@ h6 a {
     margin-bottom: 10px;
   }
   body header #brand-header img {
-    margin-left: 22px;
+    padding-left: 22px;
+    padding-right: 22px;
+    max-width: 100%;
   }
   body header nav.navbar ul {
     display: inline;
@@ -8462,4 +8469,20 @@ h6 a {
   body #main #search-container {
     padding: 0px 38px;
   }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  body .tile-container .flip-container,
+  body .tile-container .flip-container .front,
+  body .tile-container .flip-container .back {
+    height: 188px;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
 }

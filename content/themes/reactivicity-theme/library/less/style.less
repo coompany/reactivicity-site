@@ -129,9 +129,9 @@ Want to get fancy for no good reason? Knock yourself out.
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400);
 //font-family: 'Open Sans', sans-serif;
 
-@container-tablet:             ((720px + @grid-gutter-width));
+@container-tablet:             ((600px + @grid-gutter-width));
 @container-sm:                 @container-tablet;
-@container-desktop:            ((940px + @grid-gutter-width));
+@container-desktop:            ((760px + @grid-gutter-width));
 @container-md:                 @container-desktop;
 @container-large-desktop:      ((960px + @grid-gutter-width));
 @container-lg:                 @container-large-desktop;
@@ -161,6 +161,7 @@ body {
       height: 116px;
       padding-top: 8px;
       position: relative;
+      margin-top: 60px;
       margin-bottom: 60px;
       h1 a {
         .reacti-gradient;
@@ -172,10 +173,8 @@ body {
         font-size: 50px;
       }
       img {
-        //max-width: 420px;
-        //width: 40%;
-        max-height: 50px;
-        max-width: 40%;
+        max-height: 60px;
+        max-width: 60%;
       }
     }
     nav.navbar {
@@ -187,7 +186,7 @@ body {
         max-width: 300px;
         margin-right: 20px;
       }
-      ul {
+      ul.navbar-nav {
         width: 100%;
         li {
           width: 100%/3%;
@@ -195,7 +194,11 @@ body {
             text-align: center;
             text-transform: uppercase;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 20px;
+            color: @red-dark;
+          }
+          &.active a {
+            color: @red-dark;
           }
         }
       }
@@ -270,7 +273,7 @@ body {
     }
 
     .home-news {
-      margin-top: 60px;
+      margin-top: 20px;
       article {
         .article-content {
           padding: 3px 12px;
@@ -410,7 +413,9 @@ h1, h2, h3, h4, h5, h6 {
       #brand-header {
         margin-bottom: 10px;
         img {
-          margin-left: 22px;
+          padding-left: 22px;
+          padding-right: 22px;
+          max-width: 100%;
         }
       }
       nav.navbar {
@@ -429,3 +434,22 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  body {
+    .tile-container {
+      .flip-container {
+        &, .front, .back {
+          height: 188px;
+        }
+      }
+    }
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {}
