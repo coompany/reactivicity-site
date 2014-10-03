@@ -8222,6 +8222,7 @@ Want to get fancy for no good reason? Knock yourself out.
   background-repeat: no-repeat;
 }
 body {
+  padding-top: 0px;
   font-family: 'Open Sans', sans-serif;
   /*
   background-image: url(../images/bg_1px.jpg);
@@ -8248,8 +8249,6 @@ body #shadow {
   z-index: 0;
   margin-left: 2%;
   margin-right: auto;
-  margin-top: -10px;
-  margin-bottom: 20px;
 }
 body header #brand-header {
   background-color: white;
@@ -8326,7 +8325,7 @@ body #main #home-tiles .tile-container .flip-container .front {
 }
 body #main #home-tiles .tile-container .flip-container .front .tile-image {
   background-color: transparent;
-  background-size: 100%;
+  background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
   min-height: 100%;
@@ -8443,7 +8442,7 @@ body #footer #sub-floor {
 }
 .div-image {
   background-color: transparent;
-  background-size: 100%;
+  background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
 }

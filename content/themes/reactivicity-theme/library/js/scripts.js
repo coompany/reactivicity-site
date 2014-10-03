@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
 	
 	// add all your scripts here
     var setShadowHeight = function() {
-        $('#shadow').height($(document).innerHeight()-50);
+        $('#shadow').height($(document).innerHeight());
     };
     setTimeout(setShadowHeight, 1000);
     setTimeout(setShadowHeight, 3000);

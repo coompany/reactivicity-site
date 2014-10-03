@@ -22,7 +22,7 @@
                                             <div class="flipper">
                                                 <div class="front">
                                                     <?php // front content ?>
-                                                    <div class="tile-image" style="background-image: url(http://lorempixel.com/500/500/city/<?php echo $i++; ?><?php //echo $image[0]; ?>)" class="img-responsive"></div>
+                                                    <div class="tile-image" style="background-image: url(<?php echo $image[0]; //echo 'http://lorempixel.com/500/500/city/'.$i++; ?><?php //echo $image[0]; ?>)" class="img-responsive"></div>
                                                 </div>
                                                 <div class="back">
                                                     <?php // back content ?>
