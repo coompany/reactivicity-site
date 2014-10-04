@@ -74,7 +74,7 @@ Template Name: About Page
                             </a>
                         </div>
                         <div class="col-xs-3">
-                            <a href="www.vuotiarendere.com" target="_blank">
+                            <a href="http://www.vuotiarendere.com/" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/vuoti-a-rendere.png" alt="Vuoti a Rendere" />
                             </a>
                         </div>
@@ -102,7 +102,7 @@ Template Name: About Page
                             </a>
                         </div>
                         <div class="col-xs-2">
-                            <a href="http://www.undergra.it/" target="_blank">
+                            <a href="https://www.facebook.com/undergravina" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/undergra.jpg" alt="Undergrà" />
                             </a>
                         </div>
