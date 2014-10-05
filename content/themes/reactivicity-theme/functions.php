@@ -81,8 +81,8 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'bones-thumb-600', 600, 600, true );
+add_image_size( 'bones-thumb-300', 300, 300, true );
 add_image_size( 'post-featured', 1000, 371, true );
 /*
 to add more sizes, simply copy a line from above

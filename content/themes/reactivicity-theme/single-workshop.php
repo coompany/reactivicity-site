@@ -73,7 +73,7 @@
                                 <?php
                                 $docenti = get_field('docenti');
                                 foreach($docenti as $docente) {
-                                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $docente->ID ), 'post-featured' );
+                                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $docente->ID ), 'bones-thumb-300' );
                                     ?>
                                         <li class="media">
                                             <img class="media-object pull-left" src="<?php echo $image[0]; ?>" alt="<?php echo $docente->post_title; ?>">
