@@ -41,82 +41,86 @@ Template Name: About Page
             <article id="about-logos" class="row hentry">
                 <div class="col-xs-12">
                     <section class="row">
-                        <div class="col-xs-3">
+                        <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 logo-ldb">
                             <a href="http://www.laboratoridalbasso.it/" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/ldb.png" alt="Fork In Progress" />
                             </a>
                         </div>
-                        <div class="col-xs-3">
+                    </section>
+                    <section class="row">
+                        <div class="col-xs-4">
                             <a href="http://www.coompany.eu/" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/coom-logo.png" alt="Coompany srls" />
                             </a>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <a href="http://www.pophub.it/" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/pop-hub.jpg" alt="Pop-hub" />
                             </a>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <a href="http://www.esperimentiarchitettonici.it/" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/esperimenti.png" alt="Esperimenti" />
                             </a>
                         </div>
                     </section>
                     <section class="row">
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <a href="http://www.forkinprogress.it/" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/fork-in-progress.jpg" alt="Fork In Progress" />
                             </a>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <a href="https://www.facebook.com/lupmolfetta" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/lup.png" alt="LUP - Laboratorio di Urbanistica Partecipata" />
                             </a>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <a href="http://www.vuotiarendere.com/" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/vuoti-a-rendere.png" alt="Vuoti a Rendere" />
                             </a>
                         </div>
-                        <div class="col-xs-3">
+
+                    </section>
+                    <section class="row">
+                        <div class="col-xs-4">
                             <a href="https://www.facebook.com/hericool.digitools" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/hd_logo.jpg" alt="HeriCool DigiTools" />
                             </a>
                         </div>
-
-                    </section>
-                    <section class="row">
-                        <div class="col-xs-2 col-xs-offset-1">
+                        <div class="col-xs-4">
                             <a href="https://www.facebook.com/garden.faber" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/garden-faber.jpg" alt="garden faber" />
                             </a>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                             <a href="http://about.me/progettoinculture" target="_blank">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/progettoinculture.jpg" alt="Progetto Inculture" />
-                            </a>
-                        </div>
-                        <div class="col-xs-2">
-                            <a href="https://www.facebook.com/siamotuttitufi" target="_blank">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/siamo-tutti.jpg" alt="Siamo Tutti Tufi" />
-                            </a>
-                        </div>
-                        <div class="col-xs-2">
-                            <a href="https://www.facebook.com/undergravina" target="_blank">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/undergra.jpg" alt="Undergrà" />
-                            </a>
-                        </div>
-                        <div class="col-xs-2">
-                            <a href="http://www.xscape.it/" target="_blank">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/x-scape.jpg" alt="X - Scape" />
                             </a>
                         </div>
 
                     </section>
                     <section class="row">
+                        <div class="col-xs-4">
+                            <a href="https://www.facebook.com/siamotuttitufi" target="_blank">
+                                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/siamo-tutti.jpg" alt="Siamo Tutti Tufi" />
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="https://www.facebook.com/undergravina" target="_blank">
+                                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/undergra.jpg" alt="Undergrà" />
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="http://www.xscape.it/" target="_blank">
+                                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/x-scape.jpg" alt="X - Scape" />
+                            </a>
+                        </div>
+                    </section>
+                    <section class="row">
 
                         <div id="istituzionali" class="col-xs-12">
-                            <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/loghi_istituzionali.png" alt="Fork In Progress" />
+                            <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/library/images/loghi/loghi_istituzionali.png" alt="Loghi Istituzionali" />
                         </div>
                     </section>
                 </div>

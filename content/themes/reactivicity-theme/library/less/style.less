@@ -353,6 +353,12 @@ body {
             max-height: 120px;
             margin: 0 auto;
           }
+          &.logo-ldb {
+            margin-bottom: 40px;
+            img {
+              max-height: 180px;
+            }
+          }
         }
       }
       #istituzionali {
@@ -371,6 +377,35 @@ body {
     #sub-floor {
       background-color: transparent;
       color: @gray-dark;
+      & > div {
+        text-align: center;
+      }
+      .copyright {
+        display: table;
+        height: 124px;
+        overflow: hidden;
+        p {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+      .footer-logo {
+        img {
+          max-height: 80px;
+          display: inline;
+        }
+        &.logo-ldb {
+          img {
+            max-height: 120px;
+            margin-bottom: 12px;
+          }
+        }
+        .ldb-colophon {
+          font-size: 11px;
+          margin-top: 14px;
+          color: @gray-light;
+        }
+      }
     }
   }
 
@@ -496,6 +531,17 @@ h1, h2, h3, h4, h5, h6 {
         }
       }
     }
+    #footer {
+      #sub-floor {
+        .copyright {
+          margin-bottom: 32px;
+          width: 100%;
+        }
+        .footer-logo {
+          margin: 20px 0px;
+        }
+      }
+    }
   }
 }
 
@@ -516,8 +562,25 @@ h1, h2, h3, h4, h5, h6 {
         }
       }
     }
+    #footer {
+      #sub-floor {
+        .footer-logo {
+          margin: 20px 0px;
+        }
+      }
+    }
   }
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) {}
+@media (min-width: @screen-lg-min) {
+  body {
+    #footer {
+      #sub-floor {
+        .copyright {
+          height: 94px;
+        }
+      }
+    }
+  }
+}

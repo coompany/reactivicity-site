@@ -8406,6 +8406,12 @@ body #main #about-logos section div img {
   max-height: 120px;
   margin: 0 auto;
 }
+body #main #about-logos section div.logo-ldb {
+  margin-bottom: 40px;
+}
+body #main #about-logos section div.logo-ldb img {
+  max-height: 180px;
+}
 body #main #about-logos #istituzionali {
   margin-top: 100px;
 }
@@ -8419,6 +8425,31 @@ body #footer {
 body #footer #sub-floor {
   background-color: transparent;
   color: #333333;
+}
+body #footer #sub-floor > div {
+  text-align: center;
+}
+body #footer #sub-floor .copyright {
+  display: table;
+  height: 124px;
+  overflow: hidden;
+}
+body #footer #sub-floor .copyright p {
+  display: table-cell;
+  vertical-align: middle;
+}
+body #footer #sub-floor .footer-logo img {
+  max-height: 80px;
+  display: inline;
+}
+body #footer #sub-floor .footer-logo.logo-ldb img {
+  max-height: 120px;
+  margin-bottom: 12px;
+}
+body #footer #sub-floor .footer-logo .ldb-colophon {
+  font-size: 11px;
+  margin-top: 14px;
+  color: #999999;
 }
 .pager {
   margin: 20px 16px;
@@ -8515,6 +8546,13 @@ h6 a {
   body #main #social-container > div#twitter-hash-container > iframe {
     width: 100% !important;
   }
+  body #footer #sub-floor .copyright {
+    margin-bottom: 32px;
+    width: 100%;
+  }
+  body #footer #sub-floor .footer-logo {
+    margin: 20px 0px;
+  }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -8526,8 +8564,13 @@ h6 a {
   body #main #social-container > div iframe {
     width: 230px !important;
   }
+  body #footer #sub-floor .footer-logo {
+    margin: 20px 0px;
+  }
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  
+  body #footer #sub-floor .copyright {
+    height: 94px;
+  }
 }
